@@ -21,10 +21,10 @@
     Get Started
   </button>
   <button 
-    @click="goToTrainMl" 
+    @click="goToDocs" 
     class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900 w-full sm:w-auto text-center"
   >
-    Learn More
+    Docs
   </button>
   <button 
     @click="goToPricing" 
@@ -121,7 +121,6 @@ onMounted(() => {
       for (let i = 0; i < this.trail.length; i++) {
         const alpha = i / this.trail.length;
         ctx.globalAlpha = alpha;
-
         if (i === 0) {
           ctx.moveTo(this.trail[i].x, this.trail[i].y);
         } else {
@@ -162,9 +161,11 @@ const goToPricing = () => {
 
 const goToTrainMl = () => {
   router.push('/trainml');
-
-
 };
+
+const goToDocs = () => {
+  router.push('/docs');
+}
 </script>
 
 <style scoped>
