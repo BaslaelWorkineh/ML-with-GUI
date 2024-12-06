@@ -1,0 +1,27 @@
+{
+  // Extend the Nuxt-generated TypeScript configuration
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    // Add paths for custom aliases if needed
+    "paths": {
+      "@/*": ["./*"]
+    },
+    // Ensure type definitions for Node.js modules are included
+    "types": ["@types/node", "nuxt"],
+    // Include additional options as needed for your project
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "exclude": [
+    // Exclude the Nuxt build directory
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ],
+  "include": [
+    // Include all TypeScript files
+    "./**/*",
+    ".nuxt/**/*.ts"
+  ]
+}
