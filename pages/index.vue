@@ -15,22 +15,22 @@
         <p class="mt-4 text-lg lg:text-xl text-gray-300">Innovative solutions for every organization.</p>
         <div class="mt-6 flex flex-wrap gap-4 justify-center">
   <button 
-    @click="goToTrainMl" 
-    class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
-  >
-    Get Started
-  </button>
-  <button 
     @click="goToDocs" 
-    class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900 w-full sm:w-auto text-center"
+    class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
   >
     Docs
   </button>
   <button 
     @click="goToPricing" 
+    class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900 w-full sm:w-auto text-center"
+  >
+    Pricing
+  </button>
+  <button 
+    @click="goToTrainMl" 
     class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
   >
-    See Pricing
+    Get Started
   </button>
 </div>
 
