@@ -13,13 +13,28 @@
       <div class="relative z-10 text-center px-6">
         <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-white">Join the Future of Technology</h1>
         <p class="mt-4 text-lg lg:text-xl text-gray-300">Innovative solutions for every organization.</p>
-        <div class="mt-6 space-x-4">
-          <button @click="goToTrainMl" class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg">Get
-            Started</button>
-          <button @click="goToTrainMl"
-            class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900">Learn
-            More</button>
-        </div>
+        <div class="mt-6 flex flex-wrap gap-4 justify-center">
+  <button 
+    @click="goToTrainMl" 
+    class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
+  >
+    Get Started
+  </button>
+  <button 
+    @click="goToTrainMl" 
+    class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900 w-full sm:w-auto text-center"
+  >
+    Learn More
+  </button>
+  <button 
+    @click="goToPricing" 
+    class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
+  >
+    See Pricing
+  </button>
+</div>
+
+        
       </div>
     </section>
   </div>
@@ -141,8 +156,14 @@ onMounted(() => {
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
+const goToPricing = () => {
+  router.push('/pricing');
+};
+
 const goToTrainMl = () => {
   router.push('/trainml');
+
+
 };
 </script>
 
