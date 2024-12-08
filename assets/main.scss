@@ -14,3 +14,18 @@ body {
     max-width: 100vw; /* Ensure no horizontal overflow */
   }
   
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+pre, code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.doc-sidebar {
+  backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
