@@ -191,7 +191,7 @@ const sections = [
   {
     id: 'installation',
     title: 'Insallation',
-    code: 'git clone https://github.com/your-repo/ml-nocode-backend.git',
+    code: 'git clone git@github.com:BaslaelWorkineh/LinearRegressionBackend.git',
     language: 'bash',
     content: `
     <h3 class="text-lg font-bold text-white mb-4">Clone the Repository</h3>
@@ -202,7 +202,7 @@ const sections = [
   {
     id: 'install-dependencies',
     title: '',
-    code: 'cd ml-nocode-backend && npm install',
+    code: 'cd board && pip install -r requirements.txt',
     language: 'bash',
     content: `
     <h3 class="text-lg font-bold text-white mb-4">Install Dependencies</h3>
@@ -215,7 +215,7 @@ const sections = [
     id: 'quick-start',
     title: 'Quick Start',
     codeLabel: 'Run the Backend Server',
-    code: 'npm start',
+    code: 'python run.py',
     language: 'bash',
     content: `
     <div class="glass-card p-6">
