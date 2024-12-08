@@ -14,25 +14,33 @@
       </div>
 
       <nav class="pr-6 h-[calc(100vh-100px)] overflow-y-auto">
-        <ul class="space-y-6">
-          <li v-for="(section, index) in navigationSections" :key="index">
-            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
-              {{ section.title }}
-            </p>
-            <ul class="space-y-3">
-              <li v-for="link in section.links" :key="link.href">
-                <NuxtLink :to="link.href" class="flex items-center transition-colors py-2 px-3 rounded-lg" :class="[
-                  'text-gray-300 hover:text-white hover:bg-gray-700/30',
-                  { 'bg-gray-700/30 text-white': currentSection === link.href }
-                ]" @click="handleNavigation(link.href)" aria-label="Navigate to {{ link.text }}">
-                  <component :is="link.icon" class="w-5 h-5 mr-3" />
-                  {{ link.text }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+  <ul class="space-y-6">
+    <li v-for="(section, index) in navigationSections" :key="index">
+      <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+        {{ section.title }}
+      </p>
+      <ul class="space-y-3">
+        <li v-for="link in section.links" :key="link.href">
+          <NuxtLink
+            :to="link.href"
+            class="flex items-center transition-colors py-2 px-3 rounded-lg"
+            :class="[
+              'text-gray-300 hover:text-white hover:bg-gray-700/30',
+              { 'bg-gray-700/30 text-white': currentSection === link.href }
+            ]"
+            @click="handleNavigation(link.href)"
+            aria-label="Navigate to {{ link.text }}"
+          >
+            <!-- Icon component for dynamic icon rendering -->
+            <Icon :name="link.icon" class="w-5 h-5 mr-3" />
+            {{ link.text }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
     </aside>
 
 
@@ -111,28 +119,29 @@ const navigationSections = [
   {
     title: 'Getting Started',
     links: [
-      { href: '#introduction', text: 'Introduction' },
-      { href: '#installation', text: 'Installation' },
-      { href: '#quick-start', text: 'Quick Start' },
+      { href: '#introduction', text: 'Introduction', icon: 'heroicons:light-bulb' }, // 'document-text' for Introduction
+      { href: '#installation', text: 'Installation', icon: 'heroicons-outline:document-text' }, // 'device-phone' for Installation
+      { href: '#quick-start', text: 'Quick Start', icon: 'heroicons-outline:sparkles' }, // 'sparkles' for Quick Start
     ]
   },
   {
     title: 'Core Concepts',
     links: [
-      { href: '#architecture', text: 'Architecture' },
-      { href: '#data-handling', text: 'Data Handling' },
-      { href: '#model-training', text: 'Model Training' },
+      { href: '#architecture', text: 'Architecture', icon: 'heroicons-outline:building-office' }, // 'building-office' for Architecture
+      { href: '#data-handling', text: 'Data Handling', icon: 'heroicons-outline:database' }, // 'database' for Data Handling
+      { href: '#model-training', text: 'Model Training', icon: 'heroicons-outline:clipboard-check' }, // 'clipboard-check' for Model Training
     ]
   },
   {
     title: 'Advanced',
     links: [
-      { href: '#deployment', text: 'Deployment' },
-      { href: '#optimization', text: 'Optimization' },
-      { href: '#monitoring', text: 'Monitoring' },
+      { href: '#deployment', text: 'Deployment', icon: 'heroicons-outline:cloud-upload' }, // 'cloud-upload' for Deployment
+      { href: '#optimization', text: 'Optimization', icon: 'heroicons-outline:adjustments' }, // 'adjustments' for Optimization
+      { href: '#monitoring', text: 'Monitoring', icon: 'heroicons-outline:chart-bar' }, // 'chart-bar' for Monitoring
     ]
   }
 ]
+
 
 const sections = [
   {
