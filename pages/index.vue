@@ -12,7 +12,7 @@
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="relative z-10 text-center px-6">
         <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-white">Join the Future of Technology</h1>
-        <p class="mt-4 text-lg lg:text-xl text-gray-300">Innovative solutions for every organization.</p>
+        <p class="mt-4 text-lg lg:text-xl text-gray-300">Innovative solutions for every organization. (On Progress Currently)</p>
         <div class="mt-6 flex flex-wrap gap-4 justify-center">
           <button 
             @click="goToDocs" 
