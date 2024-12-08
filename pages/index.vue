@@ -14,32 +14,30 @@
         <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-white">Join the Future of Technology</h1>
         <p class="mt-4 text-lg lg:text-xl text-gray-300">Innovative solutions for every organization.</p>
         <div class="mt-6 flex flex-wrap gap-4 justify-center">
-  <button 
-    @click="goToDocs" 
-    class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
-  >
-    Docs
-  </button>
-  <button 
-    @click="goToPricing" 
-    class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900 w-full sm:w-auto text-center"
-  >
-    Pricing
-  </button>
-  <button 
-    @click="goToTrainMl" 
-    class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
-  >
-    Get Started
-  </button>
-</div>
-
-        
+          <button 
+            @click="goToDocs" 
+            class="bg-transparent border-2 border-white py-3 px-6 rounded-lg text-lg hover:bg-white hover:text-gray-900 w-full sm:w-auto text-center"
+          >
+            Explore Docs
+          </button>
+          <button 
+            @click="goToTrainMl" 
+            class="bg-teal-600 hover:bg-teal-700 py-3 px-6 rounded-lg text-lg w-full sm:w-auto text-center"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
+
+      <!-- Donate Me button at the top right -->
+      <button 
+      @click="goToDonateMe"
+      class="absolute top-4 right-4 bg-pink-600 text-white py-2 px-6 rounded-full shadow-lg hover:bg-pink-700 transition ease-in-out">
+        Donate Me
+      </button>
     </section>
   </div>
 </template>
-
 <script setup>
 onMounted(() => {
   const canvas = document.getElementById('lightTrails');
@@ -155,16 +153,16 @@ onMounted(() => {
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-const goToPricing = () => {
-  router.push('/pricing');
-};
-
 const goToTrainMl = () => {
   router.push('/trainml');
 };
 
 const goToDocs = () => {
   router.push('/docs');
+}
+
+const goToDonateMe = () => {
+  router.push('/donateme')
 }
 </script>
 
@@ -191,5 +189,25 @@ const goToDocs = () => {
 #lightTrails {
   pointer-events: none;
   z-index: 1;
+}
+
+button {
+  z-index: 10; /* Ensure button stays on top */
+}
+
+.donate-button {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  background-color: #f472b6; /* Tailwind pink-600 */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.donate-button:hover {
+  background-color: #e11d48; /* Tailwind pink-700 */
 }
 </style>
