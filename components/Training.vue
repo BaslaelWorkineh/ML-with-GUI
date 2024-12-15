@@ -205,8 +205,6 @@ const startTraining = async () => {
   }
 };
 
-
-
 // Method to stop training (optional functionality)
 const stopTraining = () => {
   trainingStatus.value = 'idle'; // Change status back to idle
