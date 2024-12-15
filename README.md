@@ -1,76 +1,31 @@
-# Nuxt Minimal Starter
+# ML No-Code Project
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The **ML No-Code** project aims to make machine learning accessible to non-technical users by providing an easy-to-use web interface for training, testing, and deploying machine learning models. No coding experience is necessary – users can simply upload their data, choose a model, and let the system handle the training, evaluation, and prediction process.
 
-## Setup
+## Features
 
-Make sure to install dependencies:
+- **File Upload**: Users can upload datasets in CSV format directly to the system.
+- **Model Selection**: Choose from a variety of pre-configured machine learning models (e.g., Linear Regression, Logistic Regression, Decision Trees, Neural Networks) for training.
+- **Training & Evaluation**: After selecting a model, the system automatically trains the model with the uploaded data, evaluates performance, and displays accuracy, loss, and other important metrics.
+- **Interactive Interface**: A no-code, web-based interface makes machine learning accessible to everyone.
+- **Export Model**: Once training is complete, users can download the trained model for further use or deployment.
+- **Progress Tracking**: The system provides live updates on training progress and status.
+- **Model History**: Track and compare previous models with stored training histories.
 
-```bash
-# npm
-npm install
+## Tech Stack
 
-# pnpm
-pnpm install
+- **Frontend**: Vue.js for creating a user-friendly interface.
+- **Backend**: Django with Django REST Framework for handling API requests and model training.
+- **Machine Learning**: Scikit-learn for model training and evaluation, Pandas for data manipulation, Joblib for model saving and loading.
+- **Database**: PostgreSQL (or SQLite for local development) to store user data and training history.
+- **Other Tools**: Docker for containerizing the application, and Celery for background tasks (if necessary).
 
-# yarn
-yarn install
+## Installation
 
-# bun
-bun install
-```
+### Prerequisites
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# ML-with-GUI
+Make sure you have the following installed:
+- Python 3.x
+- Node.js (for the frontend build)
+- pip (for installing Python packages)
+- npm or yarn (for managing front-end dependencies)
