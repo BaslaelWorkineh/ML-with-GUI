@@ -150,29 +150,26 @@ const modelMetrics = ref({
   validationLoss: 0,
 });
 
-// Method to start the training
 const startTraining = async () => {
   trainingStatus.value = 'training'; // Set the status to 'training' when training starts
   trainingProgress.value = 0; // Reset progress bar
 
   try {
     // Call the backend API to start training
-    const response = await axios.post('http://127.0.0.1:8000/api/train/').then(response => {
-    if (response.data && response.data.accuracy !== undefined && response.data.loss !== undefined) {
+    const response = await axios.post('http://127.0.0.1:8000/api/train/');
+
+    // Check if the API response contains the expected metrics
+    if (response.data && response.data.metrics && response.data.metrics.accuracy !== undefined && response.data.metrics.loss !== undefined) {
       // Handle success
-      this.accuracy = response.data.accuracy;
-      this.loss = response.data.loss;
-      console.log(`Accuracy: ${this.accuracy}, Loss: ${this.loss}`);
+      modelMetrics.value.accuracy = response.data.metrics.accuracy;
+      modelMetrics.value.loss = response.data.metrics.loss;
+      console.log(`Accuracy: ${modelMetrics.value.accuracy}, Loss: ${modelMetrics.value.loss}`);
     } else {
       console.error('Error: Response does not include accuracy or loss.');
       alert('Training failed. Please check the server logs.');
+      return;
     }
-  })
-  .catch(error => {
-    console.error(error);
-    alert('There was an error during training. Please try again.');
-  });;
-    
+
     // Simulate training response with progress and metrics from the API
     const { metrics, progress } = response.data;
 
@@ -192,6 +189,7 @@ const startTraining = async () => {
     }
 
     console.log('Training started successfully:', response.data);
+
   } catch (error) {
     trainingStatus.value = 'error'; // Update status on error
     if (error.response) {
@@ -206,6 +204,8 @@ const startTraining = async () => {
     }
   }
 };
+
+
 
 // Method to stop training (optional functionality)
 const stopTraining = () => {
