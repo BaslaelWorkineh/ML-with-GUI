@@ -191,7 +191,7 @@ const sections = [
   {
     id: 'installation',
     title: 'Insallation',
-    code: 'git clone git@github.com:BaslaelWorkineh/LinearRegressionBackend.git',
+    code: 'git clone git@github.com:BaslaelWorkineh/ModelTrainer-for-ML-No-Code.git',
     language: 'bash',
     content: `
     <h3 class="text-lg font-bold text-white mb-4">Clone the Repository</h3>
@@ -202,7 +202,7 @@ const sections = [
   {
     id: 'install-dependencies',
     title: '',
-    code: 'cd board && pip install -r requirements.txt',
+    code: 'cd ModelTrainer-for-ML-No-Code && chmod +x setup.sh && ./setup.sh',
     language: 'bash',
     content: `
     <h3 class="text-lg font-bold text-white mb-4">Install Dependencies</h3>
@@ -215,20 +215,20 @@ const sections = [
     id: 'quick-start',
     title: 'Quick Start',
     codeLabel: 'Run the Backend Server',
-    code: 'python run.py',
+    code: 'python3 manage.py runserver',
     language: 'bash',
     content: `
     <div class="glass-card p-6">
       <h3 class="text-xl font-bold text-white mb-4">Quick Start Guide</h3>
       <p class="text-gray-400 mb-4">
-        Follow these steps to quickly set up and begin using the platform:
+        Follow these steps to quickly set up and begin using the platform for the second time:
       </p>
       <ol class="list-decimal list-outside pl-6 space-y-3 text-gray-300">
         <li class="leading-6">
           <span class="font-semibold">Clone the Backend Repository:</span> Refer to the <a href="#installation" class="text-blue-400 underline">Installation</a> section for detailed steps.
         </li>
         <li class="leading-6">
-          <span class="font-semibold">Start the Backend Server:</span> Use the provided command below to get your server running.
+          <span class="font-semibold">Start the Backend Server:</span> Use the provided command above to get your server running.
         </li>
         <div class="glass-card overflow-hidden my-4">
           <div class="flex justify-between items-center px-4 py-2 border-b border-gray-700/30">
@@ -244,7 +244,7 @@ const sections = [
           <pre class="p-4 overflow-x-auto"><code class="language-bash"></code></pre>
         </div>
         <li class="leading-6">
-          <span class="font-semibold">Open the Website:</span> Navigate to the URL specified in this documentation to connect to the backend.
+          <span class="font-semibold">Open the Website:</span> Navigate to the URL specified in this documentation to connect to the backend (<a href="https://ml-nocode.vercel.app/" class="text-blue-400 underline">Website</a>).
         </li>
         <li class="leading-6">
           <span class="font-semibold">Upload Your Dataset:</span> Go to the "Data Upload" section on the website and add your dataset.
